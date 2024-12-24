@@ -1,0 +1,174 @@
+/* global.css */
+
+
+.flexs {
+   display: flex;
+}
+.justify-between{
+    justify-content: space-between;
+}
+.justify-end{
+    justify-content: flex-end;
+}
+.align-center{
+    align-items: center;
+}
+.flex1{
+    flex: 1;
+}
+.p5{
+    padding: 5px;
+}
+.p5-lr{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.p5-tb{
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.p5-t{
+    padding-top: 5px;
+}
+.p10{
+    padding: 10px;
+}
+.p10-lr{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.p10-tb{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.p10-t{
+    padding-top: 10px;
+}
+.p10-b{
+    padding-bottom: 10px;
+}
+.p15{
+    padding: 15px;
+}
+.p15-lr{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.p15-tb{
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.p15-t{
+    padding-top: 15px;
+}
+.p15-b{
+    padding-bottom: 15px;
+}
+.m5{
+    margin: 5px;
+}
+.m5-lr{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.m5-t{
+    margin-top: 5px;
+}
+.m5-l{
+    margin-left: 5px;
+}
+.m10{
+    margin: 10px;
+}
+.m10-l{
+    margin-left: 10px;
+}
+.m10-lr{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.m10-t{
+    margin-top: 10px;
+}
+.m10-tb{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.m15-l{
+    margin-left: 15px;
+}
+.m15-t{
+    margin-top: 15px;
+}
+.m15-b{
+    margin-bottom: 15px;
+}
+.m15-lr{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.m25-t{
+    margin-top: 25px;
+}
+.m25-l{
+    margin-left: 25px;
+}
+.m25-tb{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.m30-tb{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.color-y{
+    color:#ffca00;
+}
+.color-o{
+    color:  #ffa51e;
+}
+.color-per{
+    color:  #ff8f3a;
+}
+.color-red{
+    color: #ff0000
+}
+.color-blue{
+    color: #009dff
+}
+.color-grey{
+    color: #747372
+}
+.color-gray{
+    color: #9c9c9c
+}
+.color-green{
+    color: #168a16
+}
+.font-wb{
+    font-weight: bold;
+}
+.font12{
+    font-size: 12px;
+}
+.font13{
+    font-size: 13px;
+}
+.font14{
+    font-size: 14px;
+}
+
+.font15{
+    font-size: 15px;
+}
+
+.font16{
+    font-size: 16px;
+}
+
+.van-tabs__line{
+    background: #ff7c55;
+}
+.t-center{
+    text-align: center;
+}
