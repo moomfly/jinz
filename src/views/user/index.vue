@@ -60,19 +60,6 @@
       </van-cell-group>
     </div>
     <div class="user-list">
-      <van-cell-group inset title="个人中心" :border="false">
-        <van-grid :column-num="4"  :border="false" class="grid-box">
-          <!---商家等级是否是20并且未有店铺才能去申请商家入驻-->
-          <van-grid-item  text="商家入驻" v-if=" infoData?.level_id === 20 && !infoData?.merchant" to="/merchantJoin">
-            <van-image :src="require('@/assets/icon5.png')"  lazy-render slot="icon" width="35" height="35"/>
-          </van-grid-item>
-          <van-grid-item  :text="item.name" v-for="(item) in userCoreList" :key="item.name" @click="gotoOpen(item)" :to="item.path?item.path:''">
-            <van-image :src="item.img"  lazy-render slot="icon" width="35" height="35"/>
-          </van-grid-item>
-        </van-grid>
-      </van-cell-group>
-    </div>
-    <div class="user-list">
       <!--level_id 大于等于30时才能看到推广中心--->
       <van-cell-group inset title="推广中心" :border="false" v-if=" infoData?.level_id >= 30">
         <template #title>
@@ -85,6 +72,19 @@
         </template>
         <van-grid :column-num="4"  :border="false" class="grid-box">
           <van-grid-item  :text="item.name" v-for="(item) in extenCoreList" :key="item.name" :to="item.path">
+            <van-image :src="item.img"  lazy-render slot="icon" width="35" height="35"/>
+          </van-grid-item>
+        </van-grid>
+      </van-cell-group>
+    </div>
+    <div class="user-list">
+      <van-cell-group inset title="个人中心" :border="false">
+        <van-grid :column-num="4"  :border="false" class="grid-box">
+          <!---商家等级是否是20并且未有店铺才能去申请商家入驻-->
+          <van-grid-item  text="商家入驻" v-if=" infoData?.level_id === 20 && !infoData?.merchant" to="/merchantJoin">
+            <van-image :src="require('@/assets/icon5.png')"  lazy-render slot="icon" width="35" height="35"/>
+          </van-grid-item>
+          <van-grid-item  :text="item.name" v-for="(item) in userCoreList" :key="item.name" @click="gotoOpen(item)" :to="item.path?item.path:''">
             <van-image :src="item.img"  lazy-render slot="icon" width="35" height="35"/>
           </van-grid-item>
         </van-grid>

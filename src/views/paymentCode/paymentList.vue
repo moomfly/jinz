@@ -3,7 +3,7 @@
     <nav-bar title="收款记录"></nav-bar>
     <refresh-list :freshMap="freshMap"  @refresh="onRefresh" @onLoad="onLoad" :hasList="listData.length > 0?true:false">
       <van-sticky offset-top="48">
-        <van-tabs @change="changeTab" title-inactive-color="#a7a7a7" >
+        <van-tabs @change="changeTab" title-inactive-color="#a7a7a7" v-model="activeId">
           <van-tab title="收款记录" name="1"></van-tab>
           <van-tab title="退款记录" name="2"></van-tab>
         </van-tabs>
@@ -22,7 +22,7 @@
             </div>
           </template>
           <template  #default>
-            <div class=" font13" :class="[item.order_status == 50?'color-o':'color-green']">{{item.order_status_desc}}</div>
+            <div class=" font13" :class="[item.order_status == 50?'color-o':item.order_status == 60?'color-red':'color-green']">{{item.order_status_desc}}</div>
             <div class="color-red font15">付款¥{{item.sum_pay_amount}}</div>
             <div class="color-green font15">实收¥{{item.sum_get_amount}}</div>
             <van-button type="warning" size="mini" @click="outPay(item)"
@@ -49,7 +49,7 @@
             <div class="color-green font15">实收¥{{item.order.sum_get_amount}}</div>
           </template>
           <template #extra>
-            <div class="color-red" v-if="item.refund_msg">{{item.refund_msg}}</div>
+            <div class="color-red" v-if="item.refund_msg" style="width: 100%;text-align: right">{{item.refund_msg}}</div>
           </template>
         </van-cell>
       </div>
@@ -75,7 +75,7 @@ export default {
         page_size:30,
       },
       listData:[],
-      activeId:1,
+      activeId: '1',
     }
   },
   mounted() {
@@ -85,7 +85,6 @@ export default {
   },
   methods: {
     getList() {
-      console.log(this.activeId,'activeId');
       let urlAPI= this.activeId ==1?orderScanList:smRefundList
       urlAPI(this.queryParams).then(res => {
         if (res?.code === 200) {
@@ -140,7 +139,7 @@ export default {
         deviceRefund({order_no:row.order_no}).then(res =>{
           if(res?.code === 200){
             this.$toastSuccess('申请退款成功').then(() =>{
-              this.onRefresh()
+              this.changeTab('2')
             })
           }
         })

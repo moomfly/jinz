@@ -81,7 +81,7 @@ export default {
       imgList:[],
       queryParams:{
         page:1,
-        page_size:10,
+        page_size:20,
         type_id:0
       },
       queryData:{
@@ -116,7 +116,7 @@ export default {
     onRefresh(){
       console.log("刷新");
       this.freshMap.listFinished = true;
-      this.freshMap.listLoading = true;
+      this.freshMap.listLoading = false;
       this.freshMap.refreshLoad = true;
       this.queryParams.page=1
       this.imgList=[]

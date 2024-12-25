@@ -14,7 +14,7 @@
         :immediate-check="true"
         :finished-text="hasList?finishedText:''"
         @load="onLoad"
-        :offset="50"
+        :offset="1"
       >
         <slot></slot>
         <van-empty description="暂无数据" v-if="!hasList"/>
